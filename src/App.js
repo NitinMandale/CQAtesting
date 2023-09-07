@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter, Routes, Route,Outlet} from 'react-router-dom'
+import Home from './Home';
+import LineChart from './charts/LineChart';
+import BarChart from './charts/Barchart';
+import PieChart from './charts/PieChart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+           <Route path="/line" exact element={<LineChart/>} />
+          <Route path="/bar" exact element={<BarChart/>} />
+          <Route path="/pie" exact element={<PieChart/>} />
+          <Route path="/" exact element={<Home/>} /> 
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
