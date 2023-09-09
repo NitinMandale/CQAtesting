@@ -41,7 +41,7 @@ const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   datasets: [
     {
       label: 'Dataset 1',
-      data: [65, 59, 80, 81, 56, 55, 10],
+      data: [60, 59, 80, 81, 40, 55, 10],
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },

@@ -32,23 +32,36 @@ ChartJS.register(
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['18573278880', '7634213314', '247826471']; //callee number
 
+function totalDuration(data)
+{
+    var num = 0;
+    for(let i = 0; i<data.length; i++)
+    {
+        num += data[i];
+    }
+    return num;
+}
  const data = {
   labels,
   datasets: [
     {
       label: 'Dataset 1',
-      data: [65, 59, 80, 81, 40, 55, 60],
+      data: [244, 52, 96],
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
   ],
 };
 
-export default function BarChart() {
-  return   <div style={{
+export default function Duration() {
+  return   <>
+  <h1>{totalDuration(data['datasets'][0]['data'])} mins</h1>
+  <h3>Total call duration today</h3>
+  <div style={{
     height:'100vh'
   }}>
     <Bar options={options} data={data} />
     </div>
+    </>
 }
